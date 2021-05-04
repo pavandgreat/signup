@@ -1,0 +1,58 @@
+<div class="col-md-4 signup-form">
+    <h3>Signup</h3>
+    <form [formGroup]="signupForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input formControlName="name" type="email" id="name" class="form-control" placeholder="Enter name">
+          <small class="form-text text-muted">We'll never share your name with anyone else.</small>
+          <small *ngIf="signupForm.controls['name'].invalid && (signupForm.controls['name'].dirty || signupForm.controls['name'].touched)" class="alert alert-danger">
+            <span *ngIf="signupForm.controls['name'].errors?.required">
+                Name is required
+            </span>
+            <span *ngIf="signupForm.controls['name'].errors?.pattern">
+                Incorrect name
+            </span>
+          </small>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input formControlName="email" type="email" id="email" class="form-control" placeholder="Enter email">
+            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <small *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].dirty || signupForm.controls['email'].touched)" class="alert alert-danger">
+                <span *ngIf="signupForm.controls['email'].errors?.required">
+                    Email is required
+                </span>
+                <span *ngIf="signupForm.controls['email'].errors?.pattern">
+                    Incorrect email
+                </span>
+            </small>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input formControlName="phone" type="text" id="phone" class="form-control" placeholder="Enter phone">
+            <small class="form-text text-muted">We'll never share your phone with anyone else.</small>
+            <small *ngIf="signupForm.controls['phone'].invalid && (signupForm.controls['phone'].dirty || signupForm.controls['phone'].touched)" class="alert alert-danger">
+                <span *ngIf="signupForm.controls['phone'].errors?.required">
+                    Phone is required
+                </span>
+                <span *ngIf="signupForm.controls['phone'].errors?.pattern">
+                    Incorrect phone
+                </span>
+            </small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          <small class="form-text text-muted">Password should be minimum of 6 characters, one smallcase, uppercase alphabet and number is required</small>
+          <small *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].dirty || signupForm.controls['password'].touched)" class="alert alert-danger">
+            <span *ngIf="signupForm.controls['password'].errors?.required">
+                Password is required
+            </span>
+            <span *ngIf="signupForm.controls['password'].errors?.pattern">
+                Incorrect password
+            </span>
+          </small>
+        </div>
+        <button [disabled]="!signupForm.valid" (click)="register()" class="btn btn-primary">Submit</button>
+      </form>
+</div>

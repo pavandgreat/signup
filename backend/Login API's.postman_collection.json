@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "a47fe52e-ecc7-49fc-9166-49edb4ab842e",
+		"name": "Login API's",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"raod1989r@gmail.com\",\n    \"password\": \"123232a3A\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"raod1989r@gmail.com\",\n    \"password\": \"123232a3A\",\n    \"name\": \"test\",\n    \"phone\": \"9700913097\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insights",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "c6e079sc1ys60jwi70fuh",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"usernameOrEmail\": \"raod1989r@gmail.com\",\n    \"password\": \"123232a3A\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/insights",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"insights"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

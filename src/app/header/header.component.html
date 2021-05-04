@@ -1,0 +1,11 @@
+<ul *ngIf="!isLogin" ngbNav [activeId]="route.fragment | async" class="nav-tabs">
+    <li [ngbNavItem]="link.fragment" *ngFor="let link of links">
+      <a ngbNavLink routerLink="{{link.fragment}}">{{ link.title }}</a>
+    </li>
+</ul>
+
+<ul *ngIf="isLogin">
+    <a class="btb btn-danger float-right" (click)="logout()">
+        Logout
+    </a>
+</ul>

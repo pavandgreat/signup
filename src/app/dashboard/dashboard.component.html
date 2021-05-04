@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Country</th>
+      <th scope="col">Cases</th>
+      <th scope="col">Recovered</th>
+      <th scope="col">Deaths</th>
+    </tr>
+    </thead>
+    <tbody *ngIf="!isLoading">
+    <tr *ngFor="let country of countries; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>
+        <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+        {{ country.name }}
+      </td>
+      <td>{{ country.cases }}</td>
+      <td>{{ country.recovered }}</td>
+      <td>{{ country.deaths }}</td>
+    </tr>
+    </tbody>
+  </table>
